@@ -1,4 +1,4 @@
-resource "azurerm_virtual_network" "tfer--Sandbox" {
+resource "azurerm_virtual_network" "tfer" {
   address_space       = var.vnet["address_space"]
   location            = var.location
   name                = var.vnet["name"]
@@ -9,6 +9,5 @@ resource "azurerm_virtual_network" "tfer--Sandbox" {
     name           = var.subnet["name"]
   }
 
-  tags=var.common_tags
+  tags = var.common_tags
 }
-
