@@ -1,3 +1,3 @@
 output "vnet" {
-  value = azurerm_virtual_network.tfer--Sandbox.id
+  value = azurerm_virtual_network.tfer.id
 }
