@@ -11,11 +11,10 @@ variable "vnet" {
 }
 
 variable "subnet" {
-  default = {
+  default = [{
     address_prefix = "10.0.0.0/27"
     name           = "default"
-
-  }
+  }]
 }
 
 variable "location" {

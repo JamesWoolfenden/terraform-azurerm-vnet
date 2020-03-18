@@ -8,3 +8,17 @@ variable "resource_group" {
   type        = string
   description = ""
 }
+
+variable "vnet" {
+  default = {
+    name          = "Sandbox"
+    address_space = ["10.0.0.0/24"]
+  }
+}
+
+variable "subnet" {
+  default = [{
+    address_prefix = "10.0.0.0/27"
+    name           = "default"
+  }]
+}
