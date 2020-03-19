@@ -11,7 +11,7 @@ variable "resource_group" {
 
 variable "vnet" {
   default = {
-    name          = "Sandbox"
+    name          = "examplea"
     address_space = ["10.0.0.0/24"]
   }
 }
@@ -21,4 +21,20 @@ variable "subnet" {
     address_prefix = "10.0.0.0/27"
     name           = "default"
   }]
+}
+
+
+variable "rules" {
+  description = "Rules for NSG"
+  type = list(object({
+    name                       = string,
+    priority                   = number
+    direction                  = string,
+    access                     = string,
+    protocol                   = string,
+    source_port_range          = string,
+    destination_port_range     = string,
+    source_address_prefix      = string,
+    destination_address_prefix = string
+  }))
 }

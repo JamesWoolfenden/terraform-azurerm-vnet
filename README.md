@@ -46,9 +46,11 @@ This project is 100% Open Source and licensed under the [APACHE2](LICENSE).
 |------|-------------|------|---------|:-----:|
 | common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
 | location | n/a | `string` | `"uksouth"` | no |
+| nsg\_name | n/a | `string` | `"myfirstnsg"` | no |
 | resource\_group | n/a | `string` | n/a | yes |
-| subnet | n/a | `list` | <pre>[<br>  {<br>    "address_prefix": "10.0.0.0/27",<br>    "name": "default"<br>  }<br>]<br></pre> | no |
-| vnet | n/a | `map` | <pre>{<br>  "address_space": [<br>    "10.0.0.0/24"<br>  ],<br>  "name": "Sandbox"<br>}<br></pre> | no |
+| rules | Rules for NSG | <pre>list(object({<br>    name                       = string,<br>    priority                   = number<br>    direction                  = string,<br>    access                     = string,<br>    protocol                   = string,<br>    source_port_range          = string,<br>    destination_port_range     = string,<br>    source_address_prefix      = string,<br>    destination_address_prefix = string<br>  }))</pre> | n/a | yes |
+| subnet | n/a | `list` | <pre>[<br>  {<br>    "address_prefix": "10.0.0.0/27",<br>    "name": "default"<br>  }<br>]</pre> | no |
+| vnet | n/a | `map` | <pre>{<br>  "address_space": [<br>    "10.0.0.0/24"<br>  ],<br>  "name": "Sandbox"<br>}</pre> | no |
 
 ## Outputs
 
