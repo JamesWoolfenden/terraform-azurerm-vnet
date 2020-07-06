@@ -4,5 +4,5 @@ resource "azurerm_subnet" "example" {
   name                 = var.subnet[count.index]["name"]
   resource_group_name  = var.resource_group
   virtual_network_name = azurerm_virtual_network.tfer.name
-  address_prefix       = var.subnet[count.index]["address_prefix"]
+  address_prefixes     = var.subnet[count.index]["address_prefixes"]
 }
