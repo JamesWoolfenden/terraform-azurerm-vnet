@@ -1,6 +1,3 @@
-
-[![Slalom][logo]](https://slalom.com)
-
 # terraform-azurerm-vnet
 
 [![Build Status](https://github.com/JamesWoolfenden/terraform-azurerm-vnet/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-azurerm-vnet)
@@ -17,7 +14,7 @@ module "vnet" {
 }
 ```
 
-This module implements the common_tags scheme.   In the the example implementation **examplea.auto.tfvars** you'll find a basic map described:
+This module implements the common_tags scheme. In the the example implementation **examplea.auto.tfvars** you'll find a basic map described:
 
 ```HCL
 common_tags = {
@@ -33,32 +30,35 @@ The second run pushes its own state to the state store.
 ---
 
 This project is 100% Open Source and licensed under the [APACHE2](LICENSE).
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Providers
 
-| Name | Version |
-|------|---------|
-| azurerm | n/a |
+| Name    | Version |
+| ------- | ------- |
+| azurerm | n/a     |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
-| common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
-| location | n/a | `string` | `"uksouth"` | no |
-| nsg\_name | n/a | `string` | `"myfirstnsg"` | no |
-| resource\_group | n/a | `string` | n/a | yes |
-| rules | Rules for NSG | <pre>list(object({<br>    name                       = string,<br>    priority                   = number<br>    direction                  = string,<br>    access                     = string,<br>    protocol                   = string,<br>    source_port_range          = string,<br>    destination_port_range     = string,<br>    source_address_prefix      = string,<br>    destination_address_prefix = string<br>  }))</pre> | n/a | yes |
-| subnet | n/a | `list` | <pre>[<br>  {<br>    "address_prefixes": [<br>      "10.0.0.0/27"<br>    ],<br>    "name": "default"<br>  }<br>]</pre> | no |
-| vnet | n/a | `map` | <pre>{<br>  "address_space": [<br>    "10.0.0.0/24"<br>  ],<br>  "name": "Sandbox"<br>}</pre> | no |
+| Name           | Description                                        | Type                                                                                                                                                                                                                                                                                           | Default                                                                                                | Required |
+| -------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | :------: |
+| common_tags    | This is to help you add tags to your cloud objects | `map`                                                                                                                                                                                                                                                                                          | n/a                                                                                                    |   yes    |
+| location       | n/a                                                | `string`                                                                                                                                                                                                                                                                                       | `"uksouth"`                                                                                            |    no    |
+| nsg_name       | n/a                                                | `string`                                                                                                                                                                                                                                                                                       | `"myfirstnsg"`                                                                                         |    no    |
+| resource_group | n/a                                                | `string`                                                                                                                                                                                                                                                                                       | n/a                                                                                                    |   yes    |
+| rules          | Rules for NSG                                      | <pre>list(object({<br> name = string,<br> priority = number<br> direction = string,<br> access = string,<br> protocol = string,<br> source_port_range = string,<br> destination_port_range = string,<br> source_address_prefix = string,<br> destination_address_prefix = string<br> }))</pre> | n/a                                                                                                    |   yes    |
+| subnet         | n/a                                                | `list`                                                                                                                                                                                                                                                                                         | <pre>[<br> {<br> "address_prefixes": [<br> "10.0.0.0/27"<br> ],<br> "name": "default"<br> }<br>]</pre> |    no    |
+| vnet           | n/a                                                | `map`                                                                                                                                                                                                                                                                                          | <pre>{<br> "address_space": [<br> "10.0.0.0/24"<br> ],<br> "name": "Sandbox"<br>}</pre>                |    no    |
 
 ## Outputs
 
 | Name | Description |
-|------|-------------|
-| vnet | n/a |
+| ---- | ----------- |
+| vnet | n/a         |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Related Projects
 
 Check out these related projects.
@@ -81,7 +81,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-azur
 
 ## Copyrights
 
-Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 James Woolfenden
 
 ## License
 
@@ -90,19 +90,19 @@ Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 See [LICENSE](LICENSE) for full details.
 
 Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
+or more contributor license agreements. See the NOTICE file
 distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
+regarding copyright ownership. The ASF licenses this file
 to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
+with the License. You may obtain a copy of the License at
 
 <https://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
+KIND, either express or implied. See the License for the
 specific language governing permissions and limitations
 under the License.
 
@@ -112,13 +112,9 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-
-[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-[website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden
-
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-azurerm-vnet&url=https://github.com/JamesWoolfenden/terraform-azurerm-vnet
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-azurerm-vnet&url=https://github.com/JamesWoolfenden/terraform-azurerm-vnet
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-azurerm-vnet
