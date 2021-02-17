@@ -50,7 +50,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
+| common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
 | location | n/a | `string` | `"uksouth"` | no |
 | nsg\_name | n/a | `string` | `"myfirstnsg"` | no |
 | resource\_group | n/a | `string` | n/a | yes |
