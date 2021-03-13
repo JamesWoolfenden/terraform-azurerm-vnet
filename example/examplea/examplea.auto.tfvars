@@ -1,7 +1,7 @@
 common_tags = {
-"createdby" = "Terraform" }
-resource_group = "London_Sandbox_1"
-subnet = [{
+  "createdby" = "Terraform"
+}
+subnets = [{
   address_prefix = "10.0.0.0/27"
   name           = "web"
   },

@@ -67,12 +67,12 @@ No Modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
-| location | n/a | `string` | `"uksouth"` | no |
 | nsg\_name | n/a | `string` | `"myfirstnsg"` | no |
-| resource\_group | n/a | `string` | n/a | yes |
+| resource\_group | n/a | `any` | n/a | yes |
 | rules | Rules for NSG | <pre>list(object({<br>    name                       = string,<br>    priority                   = number<br>    direction                  = string,<br>    access                     = string,<br>    protocol                   = string,<br>    source_port_range          = string,<br>    destination_port_range     = string,<br>    source_address_prefix      = string,<br>    destination_address_prefix = string<br>  }))</pre> | n/a | yes |
-| subnet | n/a | `list` | <pre>[<br>  {<br>    "address_prefixes": [<br>      "10.0.0.0/27"<br>    ],<br>    "name": "default"<br>  }<br>]</pre> | no |
+| subnets | n/a | `list` | <pre>[<br>  {<br>    "address_prefixes": [<br>      "10.0.0.0/27"<br>    ],<br>    "name": "default"<br>  }<br>]</pre> | no |
 | vnet | n/a | `map` | <pre>{<br>  "address_space": [<br>    "10.0.0.0/24"<br>  ],<br>  "name": "Sandbox"<br>}</pre> | no |
+| watcher | Watcher group name | `string` | `"acctest"` | no |
 
 ## Outputs
 

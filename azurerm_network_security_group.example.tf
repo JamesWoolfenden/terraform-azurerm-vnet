@@ -1,7 +1,7 @@
-resource "azurerm_network_security_group" "example" {
+resource "azurerm_network_security_group" "examplea" {
   name                = var.nsg_name
-  location            = var.location
-  resource_group_name = var.resource_group
+  location            = var.resource_group.location
+  resource_group_name = var.resource_group.name
 
 
   dynamic "security_rule" {

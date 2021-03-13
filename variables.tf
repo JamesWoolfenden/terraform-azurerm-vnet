@@ -10,21 +10,15 @@ variable "vnet" {
   }
 }
 
-variable "subnet" {
+variable "subnets" {
   default = [{
     address_prefixes = ["10.0.0.0/27"]
     name             = "default"
   }]
 }
 
-variable "location" {
-  type        = string
-  description = ""
-  default     = "uksouth"
-}
 
 variable "resource_group" {
-  type        = string
   description = ""
 }
 

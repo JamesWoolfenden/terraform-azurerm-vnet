@@ -4,11 +4,6 @@ variable "common_tags" {
 }
 
 
-variable "resource_group" {
-  type        = string
-  description = ""
-}
-
 variable "vnet" {
   default = {
     name          = "examplea"
@@ -16,7 +11,7 @@ variable "vnet" {
   }
 }
 
-variable "subnet" {
+variable "subnets" {
   default = [{
     address_prefix = "10.0.0.0/27"
     name           = "default"
