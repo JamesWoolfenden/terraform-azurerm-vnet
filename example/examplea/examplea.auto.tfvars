@@ -1,5 +1,6 @@
 common_tags = {
-  "createdby" = "Terraform"
+  createdby = "Terraform"
+  module    = "terraform-aws-vnet"
 }
 subnets = [{
   address_prefix = "10.0.0.0/27"
