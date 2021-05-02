@@ -44,41 +44,41 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| azurerm | n/a |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [azurerm_log_analytics_workspace](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace) |
-| [azurerm_network_security_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group) |
-| [azurerm_network_watcher](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher) |
-| [azurerm_network_watcher_flow_log](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log) |
-| [azurerm_storage_account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account) |
-| [azurerm_subnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet) |
-| [azurerm_virtual_network](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) |
+| Name | Type |
+|------|------|
+| [azurerm_log_analytics_workspace.examplea](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace) | resource |
+| [azurerm_network_security_group.examplea](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group) | resource |
+| [azurerm_network_watcher.test](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher) | resource |
+| [azurerm_network_watcher_flow_log.nsg_flow_log](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log) | resource |
+| [azurerm_storage_account.test](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account) | resource |
+| [azurerm_subnet.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet) | resource |
+| [azurerm_virtual_network.tfer](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
-| nsg\_name | n/a | `string` | `"myfirstnsg"` | no |
-| resource\_group | n/a | `any` | n/a | yes |
-| rules | Rules for NSG | <pre>list(object({<br>    name                       = string,<br>    priority                   = number<br>    direction                  = string,<br>    access                     = string,<br>    protocol                   = string,<br>    source_port_range          = string,<br>    destination_port_range     = string,<br>    source_address_prefix      = string,<br>    destination_address_prefix = string<br>  }))</pre> | n/a | yes |
-| subnets | n/a | `list` | <pre>[<br>  {<br>    "address_prefixes": [<br>      "10.0.0.0/27"<br>    ],<br>    "name": "default"<br>  }<br>]</pre> | no |
-| vnet | n/a | `map` | <pre>{<br>  "address_space": [<br>    "10.0.0.0/24"<br>  ],<br>  "name": "Sandbox"<br>}</pre> | no |
-| watcher | Watcher group name | `string` | `"acctest"` | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| <a name="input_nsg_name"></a> [nsg\_name](#input\_nsg\_name) | n/a | `string` | `"myfirstnsg"` | no |
+| <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | n/a | `any` | n/a | yes |
+| <a name="input_rules"></a> [rules](#input\_rules) | Rules for NSG | <pre>list(object({<br>    name                       = string,<br>    priority                   = number<br>    direction                  = string,<br>    access                     = string,<br>    protocol                   = string,<br>    source_port_range          = string,<br>    destination_port_range     = string,<br>    source_address_prefix      = string,<br>    destination_address_prefix = string<br>  }))</pre> | n/a | yes |
+| <a name="input_subnets"></a> [subnets](#input\_subnets) | n/a | `list` | <pre>[<br>  {<br>    "address_prefixes": [<br>      "10.0.0.0/27"<br>    ],<br>    "name": "default"<br>  }<br>]</pre> | no |
+| <a name="input_vnet"></a> [vnet](#input\_vnet) | n/a | `map` | <pre>{<br>  "address_space": [<br>    "10.0.0.0/24"<br>  ],<br>  "name": "Sandbox"<br>}</pre> | no |
+| <a name="input_watcher"></a> [watcher](#input\_watcher) | Watcher group name | `string` | `"acctest"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| vnet | n/a |
+| <a name="output_vnet"></a> [vnet](#output\_vnet) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
