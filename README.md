@@ -66,11 +66,12 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_address_prefixes"></a> [address\_prefixes](#input\_address\_prefixes) | n/a | `list(string)` | n/a | yes |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| <a name="input_names"></a> [names](#input\_names) | n/a | `list(string)` | n/a | yes |
 | <a name="input_nsg_name"></a> [nsg\_name](#input\_nsg\_name) | n/a | `string` | `"myfirstnsg"` | no |
 | <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | n/a | `any` | n/a | yes |
 | <a name="input_rules"></a> [rules](#input\_rules) | Rules for NSG | <pre>list(object({<br>    name                       = string,<br>    priority                   = number<br>    direction                  = string,<br>    access                     = string,<br>    protocol                   = string,<br>    source_port_range          = string,<br>    destination_port_range     = string,<br>    source_address_prefix      = string,<br>    destination_address_prefix = string<br>  }))</pre> | n/a | yes |
-| <a name="input_subnets"></a> [subnets](#input\_subnets) | n/a | `list` | <pre>[<br>  {<br>    "address_prefixes": [<br>      "10.0.0.0/27"<br>    ],<br>    "name": "default"<br>  }<br>]</pre> | no |
 | <a name="input_vnet"></a> [vnet](#input\_vnet) | n/a | `map` | <pre>{<br>  "address_space": [<br>    "10.0.0.0/24"<br>  ],<br>  "name": "Sandbox"<br>}</pre> | no |
 | <a name="input_watcher"></a> [watcher](#input\_watcher) | Watcher group name | `string` | `"acctest"` | no |
 

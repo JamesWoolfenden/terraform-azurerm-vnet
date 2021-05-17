@@ -11,11 +11,11 @@ variable "vnet" {
 }
 
 variable "names" {
-  type=list(string)
+  type = list(string)
 }
 
 variable "address_prefixes" {
-  type=list(string)
+  type = list(string)
 }
 
 variable "resource_group" {

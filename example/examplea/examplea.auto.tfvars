@@ -2,8 +2,8 @@ common_tags = {
   createdby = "Terraform"
   module    = "terraform-aws-vnet"
 }
-names = [ "web","app","data"]
-address_prefixes = ["10.0.0.0/27","10.0.0.32/27","10.0.0.64/27"]
+names            = ["web", "app", "data"]
+address_prefixes = ["10.0.0.0/27", "10.0.0.32/27", "10.0.0.64/27"]
 
 rules = [{
   name                       = "test123"
