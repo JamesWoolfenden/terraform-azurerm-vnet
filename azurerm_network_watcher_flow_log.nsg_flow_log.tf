@@ -1,9 +1,8 @@
 
 resource "azurerm_network_watcher_flow_log" "nsg_flow_log" {
-  for_each                  = var.subnets
   network_watcher_name      = azurerm_network_watcher.test.name
   resource_group_name       = var.resource_group.name
-  network_security_group_id = azurerm_network_security_group.examplea[each.key].id
+  network_security_group_id = azurerm_network_security_group.examplea.id
   storage_account_id        = azurerm_storage_account.test.id
   enabled                   = true
   version                   = 2

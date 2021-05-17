@@ -11,13 +11,14 @@ variable "vnet" {
   }
 }
 
-variable "subnets" {
-  default = [{
-    address_prefix = "10.0.0.0/27"
-    name           = "default"
-  }]
+
+variable "names" {
+  type=list(string)
 }
 
+variable "address_prefixes" {
+  type=list(string)
+}
 
 variable "rules" {
   description = "Rules for NSG"
