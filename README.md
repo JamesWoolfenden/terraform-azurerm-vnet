@@ -10,11 +10,18 @@
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-azurerm-vnet/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-azurerm-vnet&benchmark=INFRASTRUCTURE+SECURITY)
 
 ```terraform
-module "vnet" {
-  source                   = "JamesWoolfenden/vnet/azure"
-  version                  = "0.2.0"
-  resource_group = var.resource_group
-  common_tags              = var.common_tags
+module "networka" {
+  source           = "JamesWoolfenden/vnet/azurerm"
+  version          = "0.0.24"
+  address_prefixes = ["10.2.0.0/16"]
+  names            = ["web", "app", "data"]
+  vnet = {
+    name          = "examplea"
+    address_space = ["10.2.0.0/16"]
+  }
+  rules          = var.rules
+  resource_group = azurerm_resource_group.example
+  common_tags    = var.common_tags
 }
 ```
 
