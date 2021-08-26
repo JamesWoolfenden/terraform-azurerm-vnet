@@ -12,6 +12,9 @@ resource "azurerm_network_watcher" "test" {
 }
 
 resource "azurerm_storage_account" "test" {
+  # checkov:skip=CKV2_AZURE_8: TODO
+  # checkov:skip=CKV2_AZURE_18: TODO
+  # checkov:skip=CKV2_AZURE_1: TODO
   name                = var.watcher
   resource_group_name = var.resource_group.name
   location            = var.resource_group.location
