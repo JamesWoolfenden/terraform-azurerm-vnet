@@ -1,4 +1,5 @@
 resource "azurerm_network_security_group" "examplea" {
+  #checkov:skip=CKV_AZURE_160:DynamicBlock
   name                = var.nsg_name
   location            = var.resource_group.location
   resource_group_name = var.resource_group.name

@@ -3,4 +3,3 @@ resource "azurerm_network_watcher" "test" {
   location            = var.resource_group.location
   resource_group_name = var.resource_group.name
 }
-
