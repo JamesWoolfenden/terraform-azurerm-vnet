@@ -12,6 +12,7 @@ resource "azurerm_network_watcher" "test" {
 }
 
 resource "azurerm_storage_account" "test" {
+	# checkov:skip=CKV_AZURE_33: ADD REASON
   # checkov:skip=CKV2_AZURE_8: TODO
   # checkov:skip=CKV2_AZURE_18: TODO
   # checkov:skip=CKV2_AZURE_1: TODO
@@ -28,6 +29,10 @@ resource "azurerm_storage_account" "test" {
   account_kind              = "StorageV2"
   account_replication_type  = "LRS"
   enable_https_traffic_only = true
+
+  identity {
+    type="SystemAssigned"
+  }
 }
 
 variable "watcher" {
@@ -37,7 +42,7 @@ variable "watcher" {
 }
 
 resource "azurerm_storage_account_customer_managed_key" "example" {
-  storage_account_id = azurerm_storage_account.example.id
+  storage_account_id = azurerm_storage_account.test.id
   key_vault_id       = azurerm_key_vault.example.id
   key_name           = azurerm_key_vault_key.example.name
 }
@@ -60,10 +65,10 @@ resource "azurerm_key_vault" "example" {
 resource "azurerm_key_vault_access_policy" "storage" {
   key_vault_id = azurerm_key_vault.example.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = azurerm_storage_account.example.identity.0.principal_id
+  object_id    = azurerm_storage_account.test.identity[0].principal_id
 
-  key_permissions    = ["get", "create", "list", "restore", "recover", "unwrapkey", "wrapkey", "purge", "encrypt", "decrypt", "sign", "verify"]
-  secret_permissions = ["get"]
+  key_permissions    = ["Get", "Create", "List", "Restore", "Recover", "UnwrapKey", "WrapKey", "Purge", "Encrypt", "Decrypt", "Sign", "Verify"]
+  secret_permissions = ["Get"]
 }
 
 resource "azurerm_key_vault_access_policy" "client" {
@@ -71,8 +76,8 @@ resource "azurerm_key_vault_access_policy" "client" {
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = data.azurerm_client_config.current.object_id
 
-  key_permissions    = ["get", "create", "delete", "list", "restore", "recover", "unwrapkey", "wrapkey", "purge", "encrypt", "decrypt", "sign", "verify"]
-  secret_permissions = ["get"]
+  key_permissions    = ["Get", "Create", "Delete", "List", "Restore", "Recover", "UnwrapKey", "WrapKey", "Purge", "Encrypt", "Decrypt", "Sign", "Verify"]
+  secret_permissions = ["Get"]
 }
 
 

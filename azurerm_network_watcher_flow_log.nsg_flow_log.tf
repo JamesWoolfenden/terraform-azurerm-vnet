@@ -6,7 +6,7 @@ resource "azurerm_network_watcher_flow_log" "nsg_flow_log" {
   storage_account_id        = azurerm_storage_account.test.id
   enabled                   = true
   version                   = 2
-
+  name                      = azurerm_network_watcher.test.name
   retention_policy {
     enabled = true
     days    = 90
