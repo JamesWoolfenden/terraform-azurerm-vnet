@@ -32,9 +32,10 @@ resource "azurerm_key_vault_access_policy" "client" {
 
 
 resource "azurerm_key_vault_key" "example" {
+  # checkov:skip=CKV_AZURE_112: Excessive Cost
   name         = "tfex-key"
   key_vault_id = azurerm_key_vault.example.id
-  key_type     = "RSA-HSM"
+  key_type     = "RSA"
   key_size     = 2048
   key_opts     = ["decrypt", "encrypt", "sign", "unwrapKey", "verify", "wrapKey"]
 

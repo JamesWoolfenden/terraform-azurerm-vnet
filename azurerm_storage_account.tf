@@ -1,9 +1,6 @@
 
 resource "azurerm_storage_account" "test" {
-  # checkov:skip=CKV_AZURE_33: ADD REASON
-  # checkov:skip=CKV2_AZURE_8: TODO
-  # checkov:skip=CKV2_AZURE_18: TODO
-  # checkov:skip=CKV2_AZURE_1: TODO
+  # checkov:skip=CKV_AZURE_33: Queue not in use
   name                = var.watcher
   resource_group_name = var.resource_group.name
   location            = var.resource_group.location
@@ -17,6 +14,7 @@ resource "azurerm_storage_account" "test" {
   account_kind              = "StorageV2"
   account_replication_type  = "LRS"
   enable_https_traffic_only = true
+
 
   identity {
     type = "SystemAssigned"
