@@ -1,4 +1,3 @@
-
 resource "azurerm_subnet" "example" {
   count                = length(var.names)
   name                 = var.names[count.index]

@@ -44,3 +44,10 @@ variable "nsg_name" {
   type    = string
   default = "myfirstnsg"
 }
+
+
+variable "watcher" {
+  type        = string
+  description = "Watcher group name"
+  default     = "acctest"
+}
